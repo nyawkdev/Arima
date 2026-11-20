@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="./assets/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./app.js"></script>
   </head>
@@ -33,131 +33,81 @@
             <button type="button" class="lang-btn" data-lang="ru">RU</button>
           </div>
           <a id="nav-repo" class="text-link" href="https://github.com/nyawkdev/Arima" target="_blank" rel="noreferrer">GitHub</a>
-          <a id="nav-download" class="btn btn-primary btn-sm" href="#download" data-i18n="navGet">Download</a>
         </div>
       </div>
     </header>
 
     <main id="top" class="container">
       <section class="hero">
-        <div class="hero-copy">
-          <p class="hero-kicker mono" id="release-meta-top" data-i18n="kicker">Windows 10/11, x64 portable</p>
-          <h1 class="hero-title" data-i18n="heroTitle">SoundCloud client for Windows</h1>
-          <p class="hero-sub" data-i18n="heroSub">
-            Desktop player in a single portable .exe with Dynamic Island overlay, 5-band EQ, Slowed + Reverb, synced lyrics, and Windows media integration
-          </p>
-          <div class="hero-actions">
-            <a id="download-btn" class="btn btn-primary" href="#download">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              <span data-i18n="ctaDownload">Download Arima.exe</span>
-            </a>
-            <a class="btn btn-secondary" href="#features" data-i18n="ctaExplore">Features</a>
-          </div>
+        <h1 class="hero-title" data-i18n="heroTitle">SoundCloud client for Windows</h1>
+        <p class="hero-sub" data-i18n="heroSub">
+          Desktop player in a single portable .exe with Dynamic Island overlay, 5-band EQ, Slowed + Reverb, synced lyrics, and custom themes
+        </p>
+        <div class="hero-actions">
+          <a id="download-btn" class="btn btn-primary" href="#download">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            <span data-i18n="ctaDownload">Download Arima.exe</span>
+          </a>
+          <a class="btn btn-secondary" href="#preview" data-i18n="ctaExplore">Preview</a>
         </div>
-
-        <aside class="hero-specs surface" aria-label="Technical summary">
-          <div class="spec-row">
-            <span class="spec-label" data-i18n="specFormatLabel">Format</span>
-            <span class="spec-val mono">Arima.exe</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-label" data-i18n="specOverlayLabel">Overlay hotkey</span>
-            <span class="spec-val"><kbd class="kbd">Ctrl</kbd><kbd class="kbd">Alt</kbd><kbd class="kbd">I</kbd></span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-label" data-i18n="specAudioLabel">Audio</span>
-            <span class="spec-val mono" data-i18n="specAudioVal">5-band EQ, Reverb</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-label" data-i18n="specSystemLabel">Integration</span>
-            <span class="spec-val mono">SMTC, Discord RPC</span>
-          </div>
-        </aside>
       </section>
 
       <section id="preview" class="preview-section">
-        <div class="preview-bar">
-          <div class="preview-tabs" role="tablist" aria-label="Interface views">
-            <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" data-shot="1" data-i18n="shot1">Home &amp; Themes</button>
-            <button type="button" class="tab-btn" role="tab" aria-selected="false" data-shot="2" data-i18n="shot2">Now Playing</button>
-            <button type="button" class="tab-btn" role="tab" aria-selected="false" data-shot="3" data-i18n="shot3">Audio &amp; Settings</button>
-          </div>
-          <span class="preview-hint mono" id="shot-caption" data-i18n="shotCaption1">Home / Themes</span>
+        <div class="preview-tabs" role="tablist" aria-label="Interface views">
+          <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" data-shot="1" data-i18n="shot1">Home &amp; Themes</button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" data-shot="2" data-i18n="shot2">Now Playing</button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" data-shot="3" data-i18n="shot3">Audio &amp; Settings</button>
         </div>
 
-        <div class="preview-frame surface">
+        <div class="preview-frame">
           <img id="shot-img" src="./assets/screenshots/1.png" alt="Arima desktop interface" loading="eager" />
         </div>
       </section>
 
       <section id="features" class="features-section">
-        <div class="section-head">
-          <h2 data-i18n="featuresTitle">What is included</h2>
-          <p data-i18n="featuresSub">Built with Tauri v2, SvelteKit, and Rust</p>
-        </div>
+        <h2 class="section-title" data-i18n="featuresTitle">Features</h2>
 
-        <div class="bento-top">
-          <article class="surface card card-wide">
+        <div class="feature-list">
+          <div class="feature-item">
             <h3 data-i18n="f1Title">Equalizer and playback modes</h3>
-            <p data-i18n="f1Desc">
-              5-band equalizer, preamp, Bass Boost, and built-in speed and reverb presets
-            </p>
-            <div class="dsp-strip mono" aria-label="Audio modes">
-              <span>Original 1.00x</span>
-              <span>Slowed 0.85x</span>
-              <span>Slowed + Reverb</span>
-              <span>Speed Up 1.18x</span>
-              <span>Nightcore 1.22x</span>
-              <span>85 Hz Bass Boost</span>
-            </div>
-          </article>
-
-          <article class="surface card">
+            <p data-i18n="f1Desc">5-band equalizer, preamp, Bass Boost, and Slowed, Slowed + Reverb, Speed Up, and Nightcore modes</p>
+          </div>
+          <div class="feature-item">
             <h3 data-i18n="f2Title">Dynamic Island overlay</h3>
-            <p data-i18n="f2Desc">
-              Floating mini-player in Island, Pill, or Mini style with automatic hiding in fullscreen apps
-            </p>
-            <div class="card-meta mono">
-              <span data-i18n="f2Meta">Toggle</span>
-              <span><kbd class="kbd">Ctrl</kbd><kbd class="kbd">Alt</kbd><kbd class="kbd">I</kbd></span>
-            </div>
-          </article>
-        </div>
-
-        <div class="bento-bottom">
-          <article class="surface card">
+            <p data-i18n="f2Desc">Floating mini-player in Island, Pill, or Mini style with automatic hiding in fullscreen apps and Ctrl+Alt+I hotkey</p>
+          </div>
+          <div class="feature-item">
             <h3 data-i18n="f3Title">Synced lyrics</h3>
             <p data-i18n="f3Desc">Synced lyrics viewer with click-to-seek and source info</p>
-          </article>
-
-          <article class="surface card">
+          </div>
+          <div class="feature-item">
             <h3 data-i18n="f4Title">Windows SMTC and Discord</h3>
             <p data-i18n="f4Desc">Sends track title, artist, and cover art to Windows media controls and Discord Rich Presence</p>
-          </article>
-
-          <article class="surface card">
-            <h3 data-i18n="f5Title">Portable build and themes</h3>
-            <p data-i18n="f5Desc">Single Arima.exe file, local SQLite history, stream cache, proxy support, and custom themes</p>
-          </article>
+          </div>
+          <div class="feature-item">
+            <h3 data-i18n="f5Title">Themes and personalization</h3>
+            <p data-i18n="f5Desc">Dark, light, and system modes with preset palettes, custom accent colors, and cover-based theming</p>
+          </div>
+          <div class="feature-item">
+            <h3 data-i18n="f6Title">Portable and self-contained</h3>
+            <p data-i18n="f6Desc">Single Arima.exe binary with local SQLite history, stream cache, and proxy support</p>
+          </div>
         </div>
       </section>
 
       <section id="download" class="download-section">
-        <div class="surface download-card">
+        <div class="download-row">
           <div class="download-copy">
             <h2 data-i18n="dlTitle">Download for Windows</h2>
             <p data-i18n="dlDesc">Portable Arima.exe without an installer. Requires Windows 10/11 (x64) with WebView2</p>
           </div>
-          <div class="download-actions">
-            <a id="download-btn-2" class="btn btn-primary" href="https://github.com/nyawkdev/Arima/releases/latest" target="_blank" rel="noreferrer" data-i18n="dlBtn">
-              Download Arima.exe
-            </a>
-            <span id="release-meta" class="mono release-meta" data-i18n="dlMeta">Windows 10/11 (x64), WebView2</span>
-          </div>
+          <a id="download-btn-2" class="btn btn-primary" href="https://github.com/nyawkdev/Arima/releases/latest" target="_blank" rel="noreferrer" data-i18n="dlBtn">
+            Download Arima.exe
+          </a>
         </div>
       </section>
     </main>
@@ -167,7 +117,7 @@
         <img src="./assets/logo.png" alt="" width="16" height="16" />
         <span>Arima</span>
       </div>
-      <div class="footer-meta mono" data-i18n="footerNote">Tauri v2 / SvelteKit / Rust</div>
+      <a id="footer-repo" class="text-link" href="https://github.com/nyawkdev/Arima" target="_blank" rel="noreferrer">GitHub</a>
     </footer>
   </body>
 </html>
