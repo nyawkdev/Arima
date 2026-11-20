@@ -1,0 +1,72 @@
+name: Build & Release Windows Portable
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Extract commit description & version
+        id: meta
+        shell: pwsh
+        run: |
+          $body = (git log -1 --pretty=%b) | Out-String
+          $body = $body.Trim()
+          [System.IO.File]::WriteAllText("$PWD/release_notes.txt", $body, [System.Text.UTF8Encoding]::new($false))
+          $cfg = Get-Content "src-tauri/tauri.conf.json" -Raw | ConvertFrom-Json
+          $shortSha = git rev-parse --short HEAD
+          $tag = "v$($cfg.version)-r$env:GITHUB_RUN_NUMBER"
+          "tag=$tag" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          "name=Arima v$($cfg.version) ($shortSha)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Rust cache
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck & lint
+        run: |
+          npm run check
+          npm run lint:design
+
+      - name: Build portable Windows binary
+        run: npx tauri build --no-bundle
+
+      - name: Stage portable artifact
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path "release" | Out-Null
+          Copy-Item "src-tauri/target/release/arima.exe" "release/Arima.exe" -Force
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.meta.outputs.tag }}
+          name: ${{ steps.meta.outputs.name }}
+          body_path: release_notes.txt
+          generate_release_notes: false
+          files: release/Arima.exe

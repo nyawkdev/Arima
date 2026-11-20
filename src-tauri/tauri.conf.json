@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Arima",
+  "version": "0.1.0",
+  "identifier": "app.arima.desktop",
+  "build": {
+    "frontendDist": "../build",
+    "devUrl": "http://127.0.0.1:5173",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Arima",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 960,
+        "minHeight": 600,
+        "decorations": false,
+        "transparent": false,
+        "backgroundColor": "#000000",
+        "center": true,
+        "visible": false,
+        "additionalBrowserArgs": "--disable-features=msWebOOUI,msPdfOOUI,msSmartScreenProtection,Translate,OptimizationHints,MediaRouter,DialMediaRouteProvider --autoplay-policy=no-user-gesture-required --renderer-process-limit=1 --disable-background-networking --disable-breakpad --disable-component-update --disable-domain-reliability --disable-sync --metrics-recording-only --no-pings --disable-extensions"
+      },
+      {
+        "label": "island",
+        "title": "Arima Island",
+        "url": "/island",
+        "width": 460,
+        "height": 420,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "focusable": false,
+        "visible": false,
+        "additionalBrowserArgs": "--disable-features=msWebOOUI,msPdfOOUI,msSmartScreenProtection,Translate,OptimizationHints,MediaRouter,DialMediaRouteProvider --autoplay-policy=no-user-gesture-required --renderer-process-limit=1 --disable-background-networking --disable-breakpad --disable-component-update --disable-domain-reliability --disable-sync --metrics-recording-only --no-pings --disable-extensions"
+      },
+      {
+        "label": "fx",
+        "title": "Arima FX",
+        "url": "/fx",
+        "width": 800,
+        "height": 600,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "focusable": false,
+        "visible": false,
+        "additionalBrowserArgs": "--disable-features=msWebOOUI,msPdfOOUI,msSmartScreenProtection,Translate,OptimizationHints,MediaRouter,DialMediaRouteProvider --autoplay-policy=no-user-gesture-required --renderer-process-limit=1 --disable-background-networking --disable-breakpad --disable-component-update --disable-domain-reliability --disable-sync --metrics-recording-only --no-pings --disable-extensions"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: blob: https://*.sndcdn.com; media-src 'self' blob: http://arima-stream.localhost https://arima-stream.localhost arima-stream:; connect-src 'self' ipc: http://ipc.localhost http://arima-stream.localhost https://arima-stream.localhost arima-stream:; style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self' blob:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ]
+  }
+}

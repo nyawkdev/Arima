@@ -1,0 +1,42 @@
+[package]
+name = "arima"
+version = "0.1.0"
+description = "Arima — custom SoundCloud desktop client"
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "arima_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-autostart = "2"
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-single-instance = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "fs", "io-util", "sync"] }
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json", "gzip", "socks"] }
+keyring = { version = "3", features = ["windows-native"] }
+rusqlite = { version = "0.37", features = ["bundled"] }
+souvlaki = "0.8"
+discord-rich-presence = "1"
+regex = "1"
+sha2 = "0.10"
+base64 = "0.22"
+url = "2"
+urlencoding = "2"
+log = "0.4"
+windows = { version = "0.62", features = ["Win32_Foundation", "Win32_System_Memory", "Win32_System_Threading", "Win32_UI_Shell", "Win32_UI_WindowsAndMessaging"] }
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
