@@ -1,21 +1,48 @@
+<p>
+  <img src="site/assets/logo.png" alt="Arima logo" width="56" height="56" />
+</p>
+
 # Arima
 
-Minimalist OLED-first SoundCloud desktop player for Windows built with Tauri v2, SvelteKit 5, and Rust.
+SoundCloud desktop client for Windows in a single portable executable.
+
+<p>
+  <a href="https://github.com/nyawkdev/Arima/releases/latest">
+    <img src="https://img.shields.io/github/v/release/nyawkdev/Arima?style=flat&color=141418&labelColor=0a0a0c" alt="Latest Release" />
+  </a>
+  <img src="https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-0a0a0c?style=flat" alt="Windows 10/11 x64" />
+  <img src="https://img.shields.io/badge/stack-Tauri%20v2%20%2F%20SvelteKit%20%2F%20Rust-0a0a0c?style=flat" alt="Tauri v2 / SvelteKit / Rust" />
+</p>
+
+[Website](https://nyawkdev.github.io/Arima/) / [Download Arima.exe](https://github.com/nyawkdev/Arima/releases/latest) / [Issues](https://github.com/nyawkdev/Arima/issues)
+
+<img src="site/assets/screenshots/1.png" alt="Arima Home and Themes" width="100%" />
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="site/assets/screenshots/2.png" alt="Arima Now Playing and Lyrics" width="100%" />
+    </td>
+    <td width="50%">
+      <img src="site/assets/screenshots/3.png" alt="Arima Audio and Settings" width="100%" />
+    </td>
+  </tr>
+</table>
 
 ## Features
 
-- **AMOLED & Dynamic Themes**: Pure `#000000` OLED aesthetic with preset palettes, custom accent colors, and adaptive cover-art theming.
-- **Dynamic Island Overlay**: Floating mini-player (`Island`, `Pill`, `Mini`) with fullscreen auto-hide and global hotkey (`Ctrl+Alt+I`).
-- **Real-Time Audio Engine**: 5-band equalizer, preamp, Slowed, Slowed + Reverb, Speed Up, Nightcore, and Bass Boost.
-- **Synced Lyrics**: Word-by-word and line-by-line synced lyrics with instrumental gap indicators.
-- **Windows SMTC & Discord RPC**: Native Windows media controls/artwork integration and Discord Rich Presence with AI-cleaned metadata.
-- **Portable & Lightweight**: Single-file Windows `.exe` with aggressive background memory trimming and local SQLite + stream caching.
+- Dark, light, and system themes with preset color palettes, custom colors, and cover-based theme colors
+- Floating mini-player overlay (Island, Pill, Mini) with fullscreen auto-hide and `Ctrl+Alt+I` hotkey
+- 5-band equalizer, preamp, Bass Boost, and playback modes (Slowed, Slowed + Reverb, Speed Up, Nightcore)
+- Synced lyrics viewer with click-to-seek
+- Windows media controls (SMTC) with cover art and Discord Rich Presence
+- Local listening history, stream cache, proxy support, and single portable `Arima.exe`
 
 ## Download
 
-Grab the latest portable Windows build (`Arima.exe`) from the [Releases](../../releases/latest) page. No installer required — requires Windows 10/11 (WebView2 Runtime).
+Download `Arima.exe` from [Releases](https://github.com/nyawkdev/Arima/releases/latest) or the [project site](https://nyawkdev.github.io/Arima/). Requires Windows 10/11 (x64) with WebView2 Runtime, no installer needed.
 
-## Development
+## Build from source
 
 ```bash
 npm install
@@ -24,18 +51,20 @@ npm run lint:design
 npm run tauri dev
 ```
 
-Build portable executable:
+Portable Windows build:
 
 ```bash
 npx tauri build --no-bundle
 ```
 
-The compiled portable binary will be at `src-tauri/target/release/arima.exe`.
+The output binary is written to `src-tauri/target/release/arima.exe`.
 
-## App Data & Reset
+## Data and reset
 
-- Settings & database: `%APPDATA%\app.arima.desktop`
-- Audio & WebView cache: `%LOCALAPPDATA%\app.arima.desktop`
-- SoundCloud token: Windows Credential Manager (`arima` / `soundcloud-oauth`)
+| Data | Location |
+| --- | --- |
+| Settings and SQLite DB | `%APPDATA%\app.arima.desktop` |
+| Audio and WebView cache | `%LOCALAPPDATA%\app.arima.desktop` |
+| SoundCloud OAuth token | Windows Credential Manager (`arima` / `soundcloud-oauth`) |
 
-You can also perform a full reset directly from **Settings → General → Cache & network → Reset Arima**.
+Full reset is also available inside the app under **Settings -> General -> Cache and network -> Reset Arima**.

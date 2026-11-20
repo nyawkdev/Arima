@@ -3,80 +3,108 @@ const I18N = {
     navPreview: 'Preview',
     navFeatures: 'Features',
     navDownload: 'Download',
-    badge: 'Windows 10/11 · Portable .exe',
-    heroTitle: 'SoundCloud, distilled to pure OLED.',
+    navGet: 'Download',
+    kicker: 'Windows 10/11, x64 portable',
+    heroTitle: 'SoundCloud client for Windows',
     heroSub:
-      'Fast, single-file portable desktop player with Dynamic Island overlay, real-time Slowed + Reverb & 5-band EQ, synced lyrics, and native Windows media integration.',
-    ctaDownload: 'Download Portable (.exe)',
-    ctaExplore: 'Explore features',
+      'Desktop player in a single portable .exe with Dynamic Island overlay, 5-band EQ, Slowed + Reverb, synced lyrics, and Windows media integration',
+    ctaDownload: 'Download Arima.exe',
+    ctaExplore: 'Features',
+    specFormatLabel: 'Format',
+    specOverlayLabel: 'Overlay hotkey',
+    specAudioLabel: 'Audio',
+    specAudioVal: '5-band EQ, Reverb',
+    specSystemLabel: 'Integration',
     shot1: 'Home & Themes',
     shot2: 'Now Playing',
     shot3: 'Audio & Settings',
-    featuresTitle: 'Built for focus and sound',
-    featuresSub: 'Zero clutter, instant startup, and deep customization without leaving pure black.',
-    f1Title: 'Dynamic Island Overlay',
-    f1Desc: 'Floating mini-player in Island, Pill, or Mini mode with automatic hiding in fullscreen games and apps.',
-    f2Title: 'Real-Time Audio Engine',
-    f2Desc: '5-band parametric EQ, preamp, Bass Boost, Slowed, Slowed + Reverb, Speed Up, and Nightcore.',
-    f3Title: 'Synced Lyrics',
-    f3Desc: 'Smooth word-by-word and line-by-line karaoke view with instrumental gap indicators.',
-    f4Title: 'Windows SMTC & Discord',
-    f4Desc: 'Native Windows media overlay with artwork plus Discord Rich Presence with cleaned track metadata.',
-    f5Title: 'Adaptive OLED Themes',
-    f5Desc: 'True #000000 background, curated color presets, custom theme editor, and dynamic cover-art accents.',
-    f6Title: 'Portable Single Binary',
-    f6Desc: 'No installer, no background bloat. Aggressive memory trimming keeps idle RAM usage minimal.',
-    dlTitle: 'Ready to listen?',
-    dlDesc: 'Download the latest portable Windows executable from GitHub Releases and run it directly.',
-    dlBtn: 'Latest Release (Arima.exe)',
-    dlMeta: 'Windows 10 / 11 (x64) · Portable',
-    footerNote: 'Built with Tauri v2, SvelteKit & Rust.'
+    shotCaption1: 'Home / Themes',
+    shotCaption2: 'Now Playing / Lyrics',
+    shotCaption3: 'Audio / Settings',
+    featuresTitle: 'What is included',
+    featuresSub: 'Built with Tauri v2, SvelteKit, and Rust',
+    f1Title: 'Equalizer and playback modes',
+    f1Desc: '5-band equalizer, preamp, Bass Boost, and built-in speed and reverb presets',
+    f2Title: 'Dynamic Island overlay',
+    f2Desc: 'Floating mini-player in Island, Pill, or Mini style with automatic hiding in fullscreen apps',
+    f2Meta: 'Toggle',
+    f3Title: 'Synced lyrics',
+    f3Desc: 'Synced lyrics viewer with click-to-seek and source info',
+    f4Title: 'Windows SMTC and Discord',
+    f4Desc: 'Sends track title, artist, and cover art to Windows media controls and Discord Rich Presence',
+    f5Title: 'Portable build and themes',
+    f5Desc: 'Single Arima.exe file, local SQLite history, stream cache, proxy support, and custom themes',
+    dlTitle: 'Download for Windows',
+    dlDesc: 'Portable Arima.exe without an installer. Requires Windows 10/11 (x64) with WebView2',
+    dlBtn: 'Download Arima.exe',
+    dlMeta: 'Windows 10/11 (x64), WebView2',
+    footerNote: 'Tauri v2 / SvelteKit / Rust'
   },
   ru: {
     navPreview: 'Обзор',
     navFeatures: 'Возможности',
     navDownload: 'Скачать',
-    badge: 'Windows 10/11 · Портативный .exe',
-    heroTitle: 'SoundCloud в чистом OLED.',
+    navGet: 'Скачать',
+    kicker: 'Windows 10/11, x64 portable',
+    heroTitle: 'SoundCloud-клиент для Windows',
     heroSub:
-      'Быстрый портативный плеер в одном файле с оверлеем Dynamic Island, эффектами Slowed + Reverb и 5-полосным эквалайзером, синхронизированными текстами и интеграцией с Windows.',
-    ctaDownload: 'Скачать портативную версию (.exe)',
+      'Десктопный плеер в одном файле .exe с оверлеем Dynamic Island, 5-полосным эквалайзером, Slowed + Reverb, текстами и интеграцией с Windows',
+    ctaDownload: 'Скачать Arima.exe',
     ctaExplore: 'Возможности',
+    specFormatLabel: 'Формат',
+    specOverlayLabel: 'Клавиша оверлея',
+    specAudioLabel: 'Звук',
+    specAudioVal: '5-band EQ, Reverb',
+    specSystemLabel: 'Интеграции',
     shot1: 'Главная и темы',
     shot2: 'Плеер и тексты',
     shot3: 'Звук и настройки',
-    featuresTitle: 'Создан для звука и фокуса',
-    featuresSub: 'Ничего лишнего, мгновенный запуск и глубокая настройка на базе чистого чёрного.',
-    f1Title: 'Оверлей Dynamic Island',
-    f1Desc: 'Плавающий мини-плеер в стиле Island, Пилюля или Мини с автоскрытием в полноэкранных играх.',
-    f2Title: 'Аудиодвижок реального времени',
-    f2Desc: '5-полосный эквалайзер, преамп, Bass Boost, Slowed, Slowed + Reverb, Speed Up и Nightcore.',
+    shotCaption1: 'Главная / Темы',
+    shotCaption2: 'Плеер / Тексты',
+    shotCaption3: 'Звук / Настройки',
+    featuresTitle: 'Что внутри',
+    featuresSub: 'Сделано на Tauri v2, SvelteKit и Rust',
+    f1Title: 'Эквалайзер и режимы звука',
+    f1Desc: '5-полосный эквалайзер, преамп, Bass Boost и режимы скорости и реверберации',
+    f2Title: 'Оверлей Dynamic Island',
+    f2Desc: 'Плавающий мини-плеер в стиле Island, Пилюля или Мини с автоскрытием в полноэкранных окнах',
+    f2Meta: 'Скрыть',
     f3Title: 'Синхронизированные тексты',
-    f3Desc: 'Плавный пословный и построчный караоке-режим с индикаторами инструментальных проигрышей.',
+    f3Desc: 'Просмотр текстов песен с перемоткой по клику и указанием источника',
     f4Title: 'Windows SMTC и Discord',
-    f4Desc: 'Нативная передача обложки и трека в Windows Media и Discord Rich Presence с очисткой названий.',
-    f5Title: 'Адаптивные OLED-темы',
-    f5Desc: 'Настоящий фон #000000, готовые палитры, своя тема и цвета, подстраивающиеся под обложку.',
-    f6Title: 'Портативный единый файл',
-    f6Desc: 'Без установщика и лишнего мусора. Агрессивная оптимизация памяти снижает расход ОЗУ в фоне.',
-    dlTitle: 'Готовы слушать?',
-    dlDesc: 'Скачайте последний портативный .exe из GitHub Releases и запускайте без установки.',
-    dlBtn: 'Последний релиз (Arima.exe)',
-    dlMeta: 'Windows 10 / 11 (x64) · Portable',
-    footerNote: 'Сделано на Tauri v2, SvelteKit и Rust.'
+    f4Desc: 'Передача названия, автора и обложки в панель медиа Windows и Discord Rich Presence',
+    f5Title: 'Портативный файл и темы',
+    f5Desc: 'Один файл Arima.exe, локальная история SQLite, кэш, прокси и свои цветовые темы',
+    dlTitle: 'Скачать для Windows',
+    dlDesc: 'Портативный Arima.exe без установки. Требуется Windows 10/11 (x64) и WebView2',
+    dlBtn: 'Скачать Arima.exe',
+    dlMeta: 'Windows 10/11 (x64), WebView2',
+    footerNote: 'Tauri v2 / SvelteKit / Rust'
   }
 };
 
+let activeLang = 'en';
+let activeShot = '1';
+
+function updateCaption() {
+  const cap = document.getElementById('shot-caption');
+  if (!cap) return;
+  const key = `shotCaption${activeShot}`;
+  cap.textContent = (I18N[activeLang] || I18N.en)[key] || '';
+}
+
 function applyLang(lang) {
-  const dict = I18N[lang] || I18N.en;
-  document.documentElement.lang = lang;
+  activeLang = lang === 'ru' ? 'ru' : 'en';
+  const dict = I18N[activeLang];
+  document.documentElement.lang = activeLang;
   for (const el of document.querySelectorAll('[data-i18n]')) {
     const key = el.getAttribute('data-i18n');
     if (key && dict[key]) el.textContent = dict[key];
   }
   for (const btn of document.querySelectorAll('.lang-btn')) {
-    btn.classList.toggle('is-active', btn.getAttribute('data-lang') === lang);
+    btn.classList.toggle('is-active', btn.getAttribute('data-lang') === activeLang);
   }
+  updateCaption();
 }
 
 const shotImg = document.getElementById('shot-img');
@@ -84,40 +112,39 @@ for (const btn of document.querySelectorAll('.tab-btn')) {
   btn.addEventListener('click', () => {
     const id = btn.getAttribute('data-shot');
     if (!id || !shotImg) return;
+    activeShot = id;
     shotImg.src = `./assets/screenshots/${id}.png`;
     for (const b of document.querySelectorAll('.tab-btn')) {
       const active = b === btn;
       b.classList.toggle('is-active', active);
       b.setAttribute('aria-selected', String(active));
     }
+    updateCaption();
   });
 }
 
 for (const btn of document.querySelectorAll('.lang-btn')) {
   btn.addEventListener('click', () => {
-    const lang = btn.getAttribute('data-lang') || 'en';
-    applyLang(lang);
+    applyLang(btn.getAttribute('data-lang') || 'en');
   });
 }
 
 applyLang('en');
 
 (async function resolveLatestRelease() {
-  const host = location.hostname;
-  if (!host.endsWith('.github.io')) return;
-  const owner = host.split('.')[0];
-  const repo = location.pathname.split('/').filter(Boolean)[0];
-  if (!owner || !repo) return;
-
+  const owner = 'nyawkdev';
+  const repo = 'Arima';
   const repoUrl = `https://github.com/${owner}/${repo}`;
-  const navRepo = document.getElementById('nav-repo');
-  if (navRepo) navRepo.href = repoUrl;
-
   const fallbackUrl = `${repoUrl}/releases/latest`;
+
+  const navRepo = document.getElementById('nav-repo');
   const dl1 = document.getElementById('download-btn');
   const dl2 = document.getElementById('download-btn-2');
+  const dlNav = document.getElementById('nav-download');
+  if (navRepo) navRepo.href = repoUrl;
   if (dl1) dl1.href = fallbackUrl;
   if (dl2) dl2.href = fallbackUrl;
+  if (dlNav) dlNav.href = fallbackUrl;
 
   try {
     const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/latest`);
@@ -127,8 +154,9 @@ applyLang('en');
     const targetUrl = exe ? exe.browser_download_url : data.html_url || fallbackUrl;
     if (dl1) dl1.href = targetUrl;
     if (dl2) dl2.href = targetUrl;
-    const badge = document.getElementById('release-badge');
-    if (badge && data.tag_name) badge.textContent = `${data.tag_name} · Portable .exe`;
+    if (dlNav) dlNav.href = targetUrl;
+    const meta = document.getElementById('release-meta');
+    if (meta && data.tag_name) meta.textContent = `${data.tag_name}, Windows 10/11 (x64)`;
   } catch {
   }
 })();

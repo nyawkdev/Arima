@@ -8,7 +8,13 @@ build/
 src-tauri/target/
 src-tauri/gen/
 
+.agents/
+.gemini/
+Скриншоты для репозитория и тд/
+
 *.log
+*.tmp
+release_notes.txt
 .DS_Store
 Thumbs.db
 release/
